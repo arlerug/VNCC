@@ -76,3 +76,10 @@ Rete e configurazione:
 ## Documentazione completa
 Per i dettagli sul setup dei cluster e per gli step delle esperienze pratiche, consultare il file PDF della tesina allegata.
 
+## Riferimenti
+
+- Kubernetes Documentation — [Sidecar Containers](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers)  
+- Kubernetes Blog — [Kubernetes v1.33 Release: Octarine](https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/)  
+- Kubernetes Blog — [Kubernetes v1.33: DRA Updates](https://kubernetes.io/blog/2025/05/01/kubernetes-v1-33-dra-updates/)  
+- Kubernetes Blog — [In-place Pod Resize Beta in Kubernetes v1.33](https://kubernetes.io/blog/2025/05/16/kubernetes-v1-33-in-place-pod-resize-beta/)  
+- Kubernetes Blog — [Image Volume Beta in Kubernetes v1.33](https://kubernetes.io/blog/2025/04/29/kubernetes-v1-33-image-volume-beta/)  
