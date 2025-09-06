@@ -69,4 +69,10 @@ Rete e configurazione:
 
 5. **Image Volumes**  
    - Funzionalità beta che permette di montare un’immagine OCI come volume di sola lettura.  
-   - Su containerd 2.1.4 non funzionante nativamente, testata tramite fallback (initContainer + emptyDir).  
+   - Su containerd 2.1.4 non funzionante nativamente, testata tramite fallback (initContainer + emptyDir).
+  
+  ---
+
+## Documentazione completa
+Per i dettagli sul setup dei cluster e per gli step delle esperienze pratiche, consultare il file PDF della tesina allegata.
+
