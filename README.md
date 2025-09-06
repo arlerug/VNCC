@@ -1,4 +1,4 @@
-# Progetto VNCC — Confronto Kubernetes 1.32 vs 1.33
+# Progetto VNCC — Novità di Kubernetes v1.33 e confronto con v.32
 
 ## Obiettivi e motivazioni
 L’obiettivo del progetto è analizzare e confrontare alcune funzionalità chiave di Kubernetes nelle versioni **1.32.2** e **1.33.4**, all’interno di un ambiente di laboratorio realizzato con **VirtualBox** e **Kubespray**.  
