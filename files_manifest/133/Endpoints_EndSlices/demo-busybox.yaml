@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-busybox
+spec:
+  replicas: 60
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - name: bb
+        image: busybox:stable
+        imagePullPolicy: IfNotPresent
+        command: ["sh","-c","sleep infinity"]
+        resources:
+          requests:
+            cpu: "5m"
+            memory: "8Mi"
+          limits:
+            cpu: "20m"
+            memory: "32Mi"

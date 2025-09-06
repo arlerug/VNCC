@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-sidecar-132
+  namespace: sidecar-132
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: websidecar
+  template:
+    metadata:
+      labels:
+        app: websidecar
+    spec:
+      volumes:
+        - name: html
+          configMap:
+            name: demo-index
+        - name: nginx-conf
+          configMap:
+            name: demo-nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf
+        - name: logs
+          emptyDir: {}
+      containers:
+        - name: nginx
+          image: nginx:1.25-alpine
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: logs
+              mountPath: /var/log/nginx
+        - name: log-reader
+          image: busybox:stable
+          command: ["sh","-c","tail -F /var/log/nginx/access.log"]
+          volumeMounts:
+            - name: logs
+              mountPath: /var/log/nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-sidecar-svc
+  namespace: sidecar-132
+spec:
+  type: NodePort
+  selector:
+    app: websidecar
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080

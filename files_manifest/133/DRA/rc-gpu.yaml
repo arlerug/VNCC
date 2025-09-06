@@ -1,0 +1,12 @@
+apiVersion: resource.k8s.io/v1beta2
+kind: ResourceClaim
+metadata:
+  name: some-gpu
+  namespace: default
+spec:
+  devices:
+    requests:
+    - name: one-gpu
+      exactly:
+        deviceClassName: gpu.example.com
+        count: 1
